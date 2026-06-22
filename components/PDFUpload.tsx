@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback } from "react";
-import { FileUp, File, AlertCircle } from "lucide-react";
-import { formatFileSize, isValidPDFFile } from "@/lib/file-utils";
+import { FileUp, File as FileIcon } from "lucide-react";
+import { isValidPDFFile } from "@/lib/file-utils";
 
 interface PDFUploadProps {
   onFileSelected: (file: File) => void;
@@ -69,7 +69,7 @@ export function PDFUpload({ onFileSelected, isLoading }: PDFUploadProps) {
       </label>
 
       <div className="mt-4 flex items-center justify-center gap-2 text-gray-600 text-sm">
-        <File className="w-4 h-4" />
+        <FileIcon className="w-4 h-4" />
         <span>PDF up to 10MB</span>
       </div>
     </div>

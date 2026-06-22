@@ -1,63 +1,66 @@
 import Link from "next/link";
-import { ChevronLeft, Sparkles } from "lucide-react";
+import { ChevronLeft, Sparkles, Lightbulb } from "lucide-react";
 import { AnalyzeForm } from "@/components/AnalyzeForm";
 
 export default function AnalyzePage() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 bg-white">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="sticky top-0 z-10 border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-[900px] mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+            className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4" />
             Back
           </Link>
           <div className="flex items-center gap-2">
-            <Sparkles className="w-6 h-6 text-primary" />
-            <span className="font-semibold text-gray-900">
-              AI Interview Agent
-            </span>
+            <div className="w-7 h-7 rounded-lg bg-gray-900 flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-white" />
+            </div>
+            <span className="font-semibold text-gray-900 text-sm">AI Interview Agent</span>
           </div>
-          <div className="w-20"></div>
+          <div className="w-16" />
         </div>
       </nav>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
+      {/* Page header */}
+      <div className="max-w-[900px] mx-auto px-6 pt-10 pb-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
             Analyze Your Resume
           </h1>
-          <p className="text-gray-600 text-lg">
-            Paste your resume and job description to get AI-powered insights
+          <p className="mt-2 text-gray-500 text-base">
+            Get instant AI-powered insights on how well your resume matches a job description.
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <AnalyzeForm />
-        </div>
+        {/* Form — full card layout */}
+        <AnalyzeForm />
 
-        {/* Tips Section */}
-        <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-8">
-          <h3 className="font-semibold text-blue-900 mb-4">💡 Tips for Best Results:</h3>
-          <ul className="text-blue-800 space-y-2 text-sm">
-            <li>
-              • Include complete and accurate information about your skills, experience, and education
+        {/* Tips */}
+        <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Lightbulb className="w-4 h-4 text-amber-500" />
+            <h3 className="text-sm font-semibold text-gray-900">Tips for best results</h3>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-500">
+            <li className="flex items-start gap-2">
+              <span className="text-gray-300 mt-0.5">•</span>
+              Include complete work history, skills, and education
             </li>
-            <li>
-              • Paste the full job description with all requirements and responsibilities
+            <li className="flex items-start gap-2">
+              <span className="text-gray-300 mt-0.5">•</span>
+              Paste the full job description, not just the title
             </li>
-            <li>
-              • Use clear formatting and complete sentences in your resume
+            <li className="flex items-start gap-2">
+              <span className="text-gray-300 mt-0.5">•</span>
+              Mention specific technologies, tools, and frameworks
             </li>
-            <li>
-              • Include specific technologies, frameworks, and tools you know
-            </li>
-            <li>
-              • The analysis works best with standard job descriptions from job boards
+            <li className="flex items-start gap-2">
+              <span className="text-gray-300 mt-0.5">•</span>
+              Works best with standard job postings from job boards
             </li>
           </ul>
         </div>

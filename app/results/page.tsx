@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ChevronLeft, Download, Sparkles } from "lucide-react";
 import { ResultsDisplay } from "@/components/ResultsDisplay";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { AnalysisResponse } from "@/types";
 
 export default function ResultsPage() {
-  const router = useRouter();
   const [result, setResult] = useState<AnalysisResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 

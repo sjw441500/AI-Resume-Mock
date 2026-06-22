@@ -65,8 +65,8 @@ export async function analyzeWithLLM(
  * Uncomment and configure when ready for production
  */
 export async function analyzeWithOpenAI(
-  resumeText: string,
-  jobDescription: string
+  _resumeText: string,
+  _jobDescription: string
 ): Promise<AnalysisResponse> {
   // const openai = new OpenAI({
   //   apiKey: process.env.OPENAI_API_KEY,

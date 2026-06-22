@@ -14,12 +14,6 @@ interface ResultsDisplayProps {
 }
 
 export function ResultsDisplay({ data }: ResultsDisplayProps) {
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return "bg-green-100 text-green-900";
-    if (score >= 60) return "bg-yellow-100 text-yellow-900";
-    return "bg-red-100 text-red-900";
-  };
-
   const getScoreBgGradient = (score: number) => {
     if (score >= 80) return "from-green-500 to-green-600";
     if (score >= 60) return "from-yellow-500 to-yellow-600";
